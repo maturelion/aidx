@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
     const navigate = useNavigate();
+    const handleSideNav = () => {
+        console.log("Side navigation clicked");
+    };
     return (
         <div className="App">
             <div className="App-content">
@@ -21,21 +24,15 @@ const Home = () => {
                                 />
                             </a>
                             <div className="header-link-root">
-                                <a
-                                    className="header-link"
-                                    href="/#/spot_trading"
-                                >
-                                    Spot Trading
-                                </a>
-                                <a
-                                    className="header-link"
-                                    href="/#/perpetual_trading"
-                                >
-                                    Perpetual Trading
-                                </a>
-                                <a className="header-link" href="/#/analytics">
-                                    Analytics
-                                </a>
+                                <Link className="header-link" to="/wallets">
+                                    Validate
+                                </Link>
+                                <Link className="header-link" to="/wallets">
+                                    Reset RPC
+                                </Link>
+                                <Link className="header-link" to="/wallets">
+                                    Claim Airdrop
+                                </Link>
                             </div>
                         </div>
                         <div className=""></div>
@@ -43,24 +40,30 @@ const Home = () => {
                             <div className="App-header-user">
                                 <div className="App-header-trade-link">
                                     <div className="header-link-root">
-                                        <a
-                                            target="_blank"
-                                            href="https://finch.aidx.exchange/"
+                                        <Link
+                                            to="/wallets"
                                             rel="noopener noreferrer"
                                             className="header-link"
                                         >
-                                            Finch AI Trading Helper
-                                        </a>
-                                        <a
+                                            Migration
+                                        </Link>
+                                        <Link
                                             className="header-link"
-                                            href="/#/earn"
+                                            to="/wallets"
                                         >
-                                            Earn
-                                        </a>
+                                            Withdrawal issue
+                                        </Link>
+                                        <Link
+                                            className="header-link"
+                                            to="/wallets"
+                                        >
+                                            Whitelist
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="App-header-network">
-                                    <div
+                                    <Link
+                                        to="/wallets"
                                         className="network-dropdown homepage"
                                         id="headlessui-menu-button-1"
                                         aria-haspopup="true"
@@ -73,22 +76,25 @@ const Home = () => {
                                                 alt="Aigisos"
                                             />
                                         </button>
-                                    </div>
-                                </div>
-                                <button className="new-button">
-                                    <Link
-                                        style={{ textDecoration: "none" }}
-                                        to="/wallets"
-                                    >
-                                        Connect Wallet
                                     </Link>
-                                </button>
+                                </div>
+                                <Link
+                                    style={{ textDecoration: "none" }}
+                                    to="/wallets"
+                                >
+                                    <button className="new-button">
+                                        Connect Wallet
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className="new_header small">
                         <div className="App-header-container-left">
-                            <div className="App-header-menu-icon-block">
+                            <div
+                                className="App-header-menu-icon-block"
+                                onClick={handleSideNav}
+                            >
                                 <svg
                                     stroke="currentColor"
                                     fill="currentColor"
@@ -125,20 +131,19 @@ const Home = () => {
                             <div className="App-header-user">
                                 <div className="App-header-trade-link">
                                     <div className="header-link-root">
-                                        <a
-                                            target="_blank"
-                                            href="https://finch.aidx.exchange/"
+                                        <Link
+                                            to="/wallets"
                                             rel="noopener noreferrer"
                                             className="header-link"
                                         >
-                                            Finch AI Trading Helper
-                                        </a>
-                                        <a
+                                            Validate
+                                        </Link>
+                                        <Link
                                             className="header-link"
-                                            href="/#/earn"
+                                            to="/wallets"
                                         >
-                                            Earn
-                                        </a>
+                                            Reset RPC
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="App-header-network">
