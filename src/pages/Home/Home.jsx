@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
     const navigate = useNavigate();
+    const [showSideNav, setShowSideNav] = useState(false);
     const handleSideNav = () => {
-        console.log("Side navigation clicked");
+        setShowSideNav(true);
     };
     return (
         <div className="App">
@@ -172,6 +174,99 @@ const Home = () => {
                         </div>
                     </div>
                 </header>
+                <div
+                    className="App-header-links-container App-header-drawer"
+                    style={{
+                        transform: "translateX(0%) translateZ(0px)",
+                        display: `${showSideNav ? "block" : "none"}`,
+                    }}
+                >
+                    <div className="App-header-links">
+                        <div className="App-header-links-header">
+                            <a className="App-header-link-main" href="#/">
+                                <img
+                                    src="data:image/png;base64,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"
+                                    alt="ADX Logo"
+                                />
+                            </a>
+                            <div
+                                className="App-header-menu-icon-block mobile-cross-menu"
+                                onClick={() => setShowSideNav(false)}
+                            >
+                                <svg
+                                    stroke="currentColor"
+                                    fill="none"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="App-header-menu-icon"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Validate
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Reset RPC
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Claim Airdrop
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Migration
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                NFT claim
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Withdrawal issue
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Whitelist
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Wallet glitch issue
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Snapshot
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Claim presale
+                            </Link>
+                        </div>
+                        <div className="App-header-link-container">
+                            <Link aria-current="page" to="/wallets">
+                                Kyc
+                            </Link>
+                        </div>
+                    </div>
+                </div>
                 <div
                     className="page-layout"
                     style={{
