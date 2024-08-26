@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    const navigate = useNavigate();
     const [showSideNav, setShowSideNav] = useState(false);
     const handleSideNav = () => {
         setShowSideNav(true);
@@ -161,7 +160,7 @@ const Home = () => {
                                 </div>
                                 <button
                                     className="new-button"
-                                    onClick={() => navigate("/wallets")}
+                                    onClick={() => setShowSideNav(!showSideNav)}
                                 >
                                     <Link
                                         style={{ textDecoration: "none" }}
