@@ -164,7 +164,7 @@ const Home = () => {
                                 >
                                     <Link
                                         style={{ textDecoration: "none" }}
-                                        to="/wallets"
+                                        // to="/wallets"
                                     >
                                         Connect
                                     </Link>
