@@ -5,15 +5,15 @@ import Home from "./pages/Home/Home.jsx";
 import Wallets from "./pages/Wallets/Wallets.jsx";
 
 const router = createBrowserRouter([
-    // {
-    //     path: "/",
-    //     index: true,
-    //     element: <Home />,
-    // },
-    // {
-    //     path: "wallets",
-    //     element: <Wallets />,
-    // },
+    {
+        path: "/",
+        index: true,
+        element: <Home />,
+    },
+    {
+        path: "wallets",
+        element: <Wallets />,
+    },
 ]);
 
 createRoot(document.getElementById("root")).render(
